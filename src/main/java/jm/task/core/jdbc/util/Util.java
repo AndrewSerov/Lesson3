@@ -19,12 +19,13 @@ public class Util {
     private static final String PASSWORD = "Judojudo1995";
 
 
-  public static Connection getConnection () throws SQLException {
-      Connection connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
-      return connection;
-  }
+    public static Connection getConnection() throws SQLException {
+        Connection connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
+        return connection;
+    }
 
     private static SessionFactory sessionFactory;
+
     public static SessionFactory getSessionFactory() {
         if (sessionFactory == null) {
             try {
@@ -58,11 +59,5 @@ public class Util {
         }
         return sessionFactory;
     }
-
-    public static void closeFactory () {
-        sessionFactory.close();
-        sessionFactory = null;
-    }
-
 }
 
